@@ -46,6 +46,8 @@ codex-reset-reminder --print-summary
 codex-reset-reminder --test-notification
 ```
 
+测试命令会同时触发系统通知和一个 macOS 对话框，方便确认安装成功和截图展示。
+
 ## 提醒规则
 
 每个可用 reset credit 到期前会提醒：

@@ -136,6 +136,18 @@ def notify(title, message, dry_run=False):
     )
 
 
+def alert(title, message, dry_run=False):
+    if dry_run:
+        print(f"[弹窗预览] {title}: {message}")
+        return
+    title = title.replace("\\", "\\\\").replace('"', '\\"')
+    message = message.replace("\\", "\\\\").replace('"', '\\"')
+    subprocess.run(
+        ["osascript", "-e", f'display dialog "{message}" with title "{title}" buttons {{"OK"}} default button "OK"'],
+        check=False,
+    )
+
+
 def credit_key(credit, expires_at):
     title = credit.get("title") or "Untitled"
     status = credit.get("status") or "unknown"
@@ -144,11 +156,13 @@ def credit_key(credit, expires_at):
 
 def run(args):
     if args.test_notification:
+        message = "测试提醒：Codex reset credit 将在 24 小时内到期。"
         notify(
             "Codex Reset Credit",
-            "测试通知：Codex reset credit 将在 24 小时内到期。",
+            message,
             dry_run=args.dry_run,
         )
+        alert("Codex Reset Credit", message, dry_run=args.dry_run)
         return
 
     token = load_access_token()
