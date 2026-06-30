@@ -156,7 +156,7 @@ def credit_key(credit, expires_at):
 
 def run(args):
     if args.test_notification:
-        message = "你当前有 3 次 Codex reset 机会，其中 1 次将在 24 小时内到期：2026-07-15 15:07:20。"
+        message = "示例提醒：你当前有 3 次 Codex reset 机会，其中 1 次将在 24 小时内到期。"
         notify(
             "Codex Reset Credit",
             message,

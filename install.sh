@@ -58,3 +58,7 @@ echo "Installed codex-reset-reminder."
 echo "It checks once a day and sends macOS notifications before reset credits expire."
 echo "Manual check: $BIN_DIR/codex-reset-reminder --print-summary"
 echo "Test notification: $BIN_DIR/codex-reset-reminder --test-notification"
+if [[ ":$PATH:" != *":$BIN_DIR:"* ]]; then
+  echo
+  echo "Tip: $BIN_DIR is not in PATH. Use the full command above, or add it to your shell PATH."
+fi

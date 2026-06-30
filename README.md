@@ -36,6 +36,12 @@ cd codex-reset-reminder
 codex-reset-reminder --print-summary
 ```
 
+如果提示找不到命令，可以使用完整路径：
+
+```bash
+~/.local/bin/codex-reset-reminder --print-summary
+```
+
 输出只包含可用数量和到期时间。
 
 ## 测试通知
@@ -44,6 +50,12 @@ codex-reset-reminder --print-summary
 
 ```bash
 codex-reset-reminder --test-notification
+```
+
+如果提示找不到命令，可以使用完整路径：
+
+```bash
+~/.local/bin/codex-reset-reminder --test-notification
 ```
 
 测试命令会同时触发系统通知和一个 macOS 对话框，方便确认安装成功和截图展示。
