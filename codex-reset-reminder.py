@@ -156,7 +156,7 @@ def credit_key(credit, expires_at):
 
 def run(args):
     if args.test_notification:
-        message = "测试提醒：Codex reset credit 将在 24 小时内到期。"
+        message = "你当前有 3 次 Codex reset 机会，其中 1 次将在 24 小时内到期：2026-07-15 15:07:20。"
         notify(
             "Codex Reset Credit",
             message,
@@ -196,7 +196,7 @@ def run(args):
             if remaining <= threshold_delta and threshold_key not in sent:
                 notify(
                     "Codex Reset Credit",
-                    f"{credit.get('title') or 'Reset credit'} 将在{label}到期：{local_expiry}",
+                    f"你当前有 {len(available)} 次 Codex reset 机会，其中 1 次将在{label}到期：{local_expiry}。",
                     dry_run=args.dry_run,
                 )
                 sent.add(threshold_key)
