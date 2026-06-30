@@ -34,9 +34,7 @@ cat > "$PLIST" <<EOF
   <string>com.codex-reset-reminder</string>
   <key>ProgramArguments</key>
   <array>
-    <string>/usr/bin/env</string>
-    <string>python3</string>
-    <string>$SCRIPT</string>
+    <string>$BIN_DIR/codex-reset-reminder</string>
   </array>
   <key>StartInterval</key>
   <integer>86400</integer>
