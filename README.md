@@ -4,6 +4,14 @@
 
 Local macOS reminder for Codex reset credits. It reads your local Codex auth state, checks reset credit expiry dates, and notifies you before they expire.
 
+<p align="center">
+  <a href="#中文说明"><strong>中文</strong></a>
+  ·
+  <a href="#english"><strong>English</strong></a>
+</p>
+
+---
+
 ## 中文说明
 
 ### 安全边界
